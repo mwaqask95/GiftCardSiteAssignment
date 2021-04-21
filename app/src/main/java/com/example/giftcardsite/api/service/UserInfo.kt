@@ -1,3 +1,6 @@
+//Assignment Changes
+// Part 5 second change
+// commented UserInfo interface as it was only used in Reporter class and we have commented that class
 /*
 package com.example.giftcardsite.api.service
 

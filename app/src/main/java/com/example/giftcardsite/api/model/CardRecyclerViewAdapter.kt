@@ -17,6 +17,9 @@ class CardRecyclerViewAdapter(val context: Context, private val cardList: List<C
         fun setData(card: Card?) {
             val image : CircleImageView = itemView.findViewById(R.id.image_view)
             val text : TextView = itemView.findViewById(R.id.name)
+            //Assignment Changes
+            // Part 3
+            // replaced http call with https
             if (card != null) {
                 Glide.with(context).asBitmap().load("https://appsecclass.report/" + card.product?.productImageLink).into(image)
             }

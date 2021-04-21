@@ -1,3 +1,6 @@
+//Assignment Changes
+// Part 5 first change
+// commented Reporter class as it was not used
 /*
 package com.example.giftcardsite.api.model
 
@@ -18,8 +21,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class Reporter(private val token: String) : LocationListener, SensorEventListener{
-    override fun onLocationChanged(location: Location) {
-        */
+override fun onLocationChanged(location: Location) {
+*/
 /*var builder: Retrofit.Builder = Retrofit.Builder().baseUrl("http://appsecclass.report").addConverterFactory(
             GsonConverterFactory.create())
         var retrofit: Retrofit = builder.build()

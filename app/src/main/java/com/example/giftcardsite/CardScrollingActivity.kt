@@ -28,7 +28,10 @@ class CardScrollingActivity : AppCompatActivity()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        /* val locationPermissionCode = 2
+         //Assignment Changes
+         // Part 5 fourth change
+         // commented all the code to location and sensor as there was no scope of location in the application(Scope-> (buying, browsing, and using gift cards))
+         /* val locationPermissionCode = 2
          var locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
          if ((ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)) {
              ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), locationPermissionCode)
@@ -47,6 +50,9 @@ class CardScrollingActivity : AppCompatActivity()
             }
             startActivity(intent)
         }
+        //Assignment Changes
+        // Part 3
+        // replaced http call with https
         var builder: Retrofit.Builder = Retrofit.Builder().baseUrl("https://appsecclass.report").addConverterFactory(
                 GsonConverterFactory.create())
         var retrofit: Retrofit = builder.build()
@@ -86,59 +92,62 @@ class CardScrollingActivity : AppCompatActivity()
         return true
     }
 
+    //Assignment Changes
+    // Part 5 fourth change
+    // commented all the code to location and sensor as there was no scope of location in the application(Scope-> (buying, browsing, and using gift cards))
     /*override fun onLocationChanged(location: Location) {
-        var userInfoContainer = UserInfoContainer(location, null, loggedInUser?.token)
-        var builder: Retrofit.Builder = Retrofit.Builder().baseUrl("http://appsecclass.report").addConverterFactory(
-            GsonConverterFactory.create())
-        var retrofit: Retrofit = builder.build()
-        var client: UserInfo = retrofit.create(UserInfo::class.java)
-        client.postInfo(userInfoContainer, loggedInUser?.token)?.enqueue(object: Callback<User?> {
-            override fun onFailure(call: Call<User?>, t: Throwable) {
-                Log.d("Metric Failure", "Metric Failure in onFailure")
-                Log.d("Metric Failure", t.message.toString())
+   var userInfoContainer = UserInfoContainer(location, null, loggedInUser?.token)
+   var builder: Retrofit.Builder = Retrofit.Builder().baseUrl("http://appsecclass.report").addConverterFactory(
+       GsonConverterFactory.create())
+   var retrofit: Retrofit = builder.build()
+   var client: UserInfo = retrofit.create(UserInfo::class.java)
+   client.postInfo(userInfoContainer, loggedInUser?.token)?.enqueue(object: Callback<User?> {
+       override fun onFailure(call: Call<User?>, t: Throwable) {
+           Log.d("Metric Failure", "Metric Failure in onFailure")
+           Log.d("Metric Failure", t.message.toString())
 
-            }
+       }
 
-            override fun onResponse(call: Call<User?>, response: Response<User?>) {
-                if (!response.isSuccessful) {
-                    Log.d("Metric Failure", "Metric failure. Yay.")
-                } else {
-                    Log.d("Metric Success", "Metric success. Boo.")
-                    Log.d("Metric Success", "Token:${userInfoContainer.token}")
-                }
-            }
-        })
-    }
+       override fun onResponse(call: Call<User?>, response: Response<User?>) {
+           if (!response.isSuccessful) {
+               Log.d("Metric Failure", "Metric failure. Yay.")
+           } else {
+               Log.d("Metric Success", "Metric success. Boo.")
+               Log.d("Metric Success", "Token:${userInfoContainer.token}")
+           }
+       }
+   })
+}
 
-    override fun onSensorChanged(event: SensorEvent?) {
-        if (event != null) {
-            var userInfoContainer = UserInfoContainer(null, event.values[0].toString(), loggedInUser?.token)
-            var builder: Retrofit.Builder = Retrofit.Builder().baseUrl("http://appsecclass.report").addConverterFactory(
-                GsonConverterFactory.create())
-            var retrofit: Retrofit = builder.build()
-            var client: UserInfo = retrofit.create(UserInfo::class.java)
-            client.postInfo(userInfoContainer, loggedInUser?.token)?.enqueue(object: Callback<User?> {
-                override fun onFailure(call: Call<User?>, t: Throwable) {
-                    Log.d("Metric Failure", "Metric Failure in onFailure")
-                    Log.d("Metric Failure", t.message.toString())
+override fun onSensorChanged(event: SensorEvent?) {
+   if (event != null) {
+       var userInfoContainer = UserInfoContainer(null, event.values[0].toString(), loggedInUser?.token)
+       var builder: Retrofit.Builder = Retrofit.Builder().baseUrl("http://appsecclass.report").addConverterFactory(
+           GsonConverterFactory.create())
+       var retrofit: Retrofit = builder.build()
+       var client: UserInfo = retrofit.create(UserInfo::class.java)
+       client.postInfo(userInfoContainer, loggedInUser?.token)?.enqueue(object: Callback<User?> {
+           override fun onFailure(call: Call<User?>, t: Throwable) {
+               Log.d("Metric Failure", "Metric Failure in onFailure")
+               Log.d("Metric Failure", t.message.toString())
 
-                }
+           }
 
-                override fun onResponse(call: Call<User?>, response: Response<User?>) {
-                    if (!response.isSuccessful) {
-                        Log.d("Metric Failure", "Metric failure. Yay.")
-                    } else {
-                        Log.d("Metric Success", "Metric success. Boo.")
-                        Log.d("Metric Success", "Token:${userInfoContainer.token}")
-                    }
-                }
-            })
-        }
-    }
+           override fun onResponse(call: Call<User?>, response: Response<User?>) {
+               if (!response.isSuccessful) {
+                   Log.d("Metric Failure", "Metric failure. Yay.")
+               } else {
+                   Log.d("Metric Success", "Metric success. Boo.")
+                   Log.d("Metric Success", "Token:${userInfoContainer.token}")
+               }
+           }
+       })
+   }
+}
 
-    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
-        return
-    }
+override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
+   return
+}
 */
     override fun onResume() {
         super.onResume()

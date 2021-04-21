@@ -43,6 +43,9 @@ class ThirdFragment : Fragment() {
             var username : String = view.findViewById<EditText>(R.id.username).text.toString()
             var password : String = view.findViewById<EditText>(R.id.registerPassword).text.toString()
 
+            //Assignment Changes
+            // Part 3
+            // replaced http call with https
             var builder: Retrofit.Builder = Retrofit.Builder().baseUrl("https://appsecclass.report").addConverterFactory(
                 GsonConverterFactory.create())
             var retrofit: Retrofit = builder.build()
